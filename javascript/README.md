@@ -1,21 +1,26 @@
-Il programma dovrà chiedere all'utente il numero di chilometri che vuole percorrere e l'età del passeggero.
-Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
+Descrizione:
+Scrivere un programma che chieda all’utente:
+Il numero di chilometri da percorrere
+Età del passeggero
+Sulla base di queste informazioni dovrà calcolare il prezzo totale del biglietto di viaggio, secondo le seguenti regole:
 il prezzo del biglietto è definito in base ai km (0.21 € al km)
 va applicato uno sconto del 20% per i minorenni
 va applicato uno sconto del 40% per gli over 65.
-L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
-Questo richiederà un minimo di ricerca.
+MILESTONE 1:
+Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente due input e un bottone (non stilizzati), realizziamo le specifiche scritte sopra. La risposta finale (o output) sarà anch’essa da scrivere in console.
+MILESTONE 2:
+Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo, come da screenshot allegato. Il recap dei dati e l’output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo).
+Nota:
+Se non vi sentite particolarmente creativi, questa potrebbe essere un’implementazione da seguire per il secondo milestone. Potete scegliere di implementare una soluzione completamente diversa oppure simile, ma in ogni caso cercate di farla vostra.
+Ricordate: il primo push dovrà essere un file README.md contenente la risoluzione dell’esercizio in linguaggio naturale!
+Buon lavoro!
+:saluto_vulcaniano:
 
-1 - Definisco la variabile di 0,21 euro/km
-2 - Definisco una variabile e con prompt chiedo all'utente quanti chilometri vuole fare
-3 - Definisco una variabile e chiedo all'utente l'età
-4 - Definisco una variabile con prezzo totale (0,21 \* km)
-5 - Definisco variabile dello sconto del 20%
-6 - Definisco variabile dello sconto del 40%
-7 - IF età < 18
-sconto 20%
-ELSE IF età > 65
-sconto 40%
-ELSE
-prezzo pieno
-8 - Output con 2 decimali.
+!!! Via i prompt !!!
+
+creo 2 input:
+
+- input 1 per la lunghezza del viaggio
+- input 2 per l'età
+
+creo 1 bottone

@@ -6,7 +6,31 @@
     <title>JS Prezzo biglietto</title>
   </head>
   <body>
-    <h1>Il tuo biglietto costerà <span id="price"></span>&euro;.</h1>
+    <div class="container">
+      <div class="row">
+        <form action="">
+          <div class="input-fields">
+            <label for="user-name">Nome e Cognome</label>
+            <input type="text" id="user-name" />
+
+            <label for="input-km">KM da percorrere</label>
+            <input type="number" id="input-km" />
+
+            <select name="user-age" id="age-range">
+              <option value="default">--- Seleziona il range di età ---</option>
+              <option value="under">Under 18</option>
+              <option value="legal-age">Maggiorenne</option>
+              <option value="over-65">Over 65</option>
+            </select>
+          </div>
+
+          <div class="buttons-container">
+            <button>Genera Biglietto</button>
+            <button>Annulla</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <script type="text/javascript" src="./javascript/main.js"></script>
   </body>
