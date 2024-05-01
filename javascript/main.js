@@ -1,34 +1,23 @@
 "use strict";
 
 // Prendo dall'HTML l' ID desiderato
-let inputKmId = document.getElementById("input-km");
-let inputKm = inputKmId.innerHTML;
-console.log("Chilometri da percorrere:", inputKm);
+const userName = document.getElementById("user-name");
+console.dir(userName);
+
+// Prendo dall'HTML l' ID desiderato
+const inputKm = document.getElementById("input-km");
+console.dir(inputKm);
+
+// Definisco la costante dell'età chiedendola all'utente, la trasformo in numero e la stampo in console
+const inputAge = document.getElementById("age-range");
+console.dir(inputAge);
+
+// Definisco la costante dell'età chiedendola all'utente, la trasformo in numero e la stampo in console
+const generateButton = document.getElementById("generate-button");
+console.dir(generateButton);
 
 // Definisco la costante di prezzo al km
 const ticketPriceKm = 0.21;
-
-/* Istruzione condizionale.
-  Ad oggi non ho modo di risolvere il loop che si presenta (se continua ad esserci un input non valido),
-  quindi semplicemente appare un alert ed il programma continua lo stesso, dando però nel caso un risultato
-  non valido */
-/*if (isNaN(userKm)) {
-  alert("ATTENZIONE! Quello inserito non è un numero");
-  console.log("ATTENZIONE! Quello inserito non è un numero");
-}*/
-
-// Definisco la costante dell'età chiedendola all'utente, la trasformo in numero e la stampo in console
-let inputAgeId = document.getElementById("input-age");
-let inputAge = inputAgeId.innerHTML;
-console.log("Eta' del viaggiatore:", inputAge);
-
-/* Istruzione condizionale.
-  Ad oggi non ho modo di risolvere il loop che si presenta (se continua ad esserci un input non valido),
-  quindi semplicemente appare un alert ed il programma continua lo stesso, dando però nel caso un risultato
-  non valido */
-/*if (isNaN(userAge)) {
-  console.log("ATTENZIONE! Quello inserito non è un numero");
-} */
 
 // Definisco la variabile del prezzo totale del biglietto in base ai km e lo stampo in console
 let totalPriceTicket = inputKm * ticketPriceKm;
