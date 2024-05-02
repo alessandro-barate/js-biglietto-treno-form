@@ -2,6 +2,11 @@
 
 // Prendo dall'HTML l' ID del bottone che genera i biglietti
 const generateButton = document.getElementById("generate-button");
+const nameSurname = document.getElementById("name");
+const offer = document.getElementById("offer");
+const trainCar = document.getElementById("train-car");
+const cpCode = document.getElementById("cp-cpde");
+const ticketPrice = document.getElementById("ticket-price");
 
 // Aggiungo l'evento click al bottone che genera i biglietti
 generateButton.addEventListener("click", function () {
@@ -15,10 +20,6 @@ generateButton.addEventListener("click", function () {
   // Definisco la variabile del prezzo totale del biglietto in base ai km e lo stampo in console
   let totalPriceTicket = inputKmValue * ticketPriceKm;
   console.log("Prezzo totale:", totalPriceTicket, "euro");
-
-  //Dichiaro le variabili per le età sotto ai 18 anni e sopra i 65 anni
-  //const ageUnder = 18;
-  //const ageOver = 65;
 
   // Dichiaro la variabile dello sconto applicabile
   let discount = {};
@@ -34,11 +35,7 @@ generateButton.addEventListener("click", function () {
     discount = 0;
   }
 
-  // Definisco la percentuale di sconto e la stampo in console
-  let discountPercentage = (100 / 100) * discount;
-  console.log("Percentuale di sconto:", discountPercentage, "per cento");
-
-  let finalPrice =
-    totalPriceTicket - (totalPriceTicket / 100) * discountPercentage;
+  let finalPrice = totalPriceTicket - (totalPriceTicket / 100) * discount;
+  let finalPriceFixed = finalPrice.toFixed(2);
   console.log("Il prezzo finale è di:", finalPrice.toFixed(2), "euro");
 });
