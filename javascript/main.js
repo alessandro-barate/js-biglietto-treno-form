@@ -18,6 +18,7 @@ generateButton.addEventListener("click", function () {
   const userNameValue = document.getElementById("user-name").value;
   const inputKmValue = document.getElementById("input-km").value;
   const inputAge = document.getElementById("age-range").value;
+  const ticketOutput = document.getElementById("ticket");
 
   // Definisco la costante di prezzo al km
   const ticketPriceKm = 0.21;
@@ -56,4 +57,6 @@ generateButton.addEventListener("click", function () {
   trainCarId.innerHTML = randomTrainCart;
   cpCodeId.innerHTML = randomCpCode;
   ticketPriceId.innerHTML = finalPriceFixed;
+
+  ticketOutput.classList.remove("hidden");
 });
