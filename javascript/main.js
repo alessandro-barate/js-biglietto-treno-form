@@ -48,6 +48,12 @@ generateButton.addEventListener("click", function () {
   let finalPriceFixed = finalPrice.toFixed(2);
   console.log("Il prezzo finale è di:", finalPrice.toFixed(2), "euro");
 
+  const randomTrainCart = Math.floor(Math.random() * 30 + 1);
+  const randomCpCode = Math.floor(Math.random() * 99999 + 1);
+
   nameSurnameId.innerHTML = userNameValue;
+  offerId.innerHTML = inputAge;
+  trainCarId.innerHTML = randomTrainCart;
+  cpCodeId.innerHTML = randomCpCode;
   ticketPriceId.innerHTML = finalPriceFixed;
 });
