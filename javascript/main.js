@@ -42,5 +42,3 @@ generateButton.addEventListener("click", function () {
     totalPriceTicket - (totalPriceTicket / 100) * discountPercentage;
   console.log("Il prezzo finale è di:", finalPrice.toFixed(2), "euro");
 });
-
-// TODO: chiedere come mostrare nell'html solo 2 decimali.
