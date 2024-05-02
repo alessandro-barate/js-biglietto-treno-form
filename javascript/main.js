@@ -2,6 +2,7 @@
 
 // Prendo dall'HTML l' ID del bottone che genera i biglietti
 const generateButton = document.getElementById("generate-button");
+const resetButton = document.getElementById("reset-button");
 const nameSurnameId = document.getElementById("name");
 let nameSurname = nameSurnameId.innerHTML;
 const offerId = document.getElementById("offer");
@@ -12,13 +13,13 @@ const cpCodeId = document.getElementById("cp-code");
 let cpCode = cpCodeId.innerHTML;
 const ticketPriceId = document.getElementById("ticket-price");
 let ticketPrice = ticketPriceId.innerHTML;
+const ticketOutput = document.getElementById("ticket");
 
 // Aggiungo l'evento click al bottone che genera i biglietti
 generateButton.addEventListener("click", function () {
-  const userNameValue = document.getElementById("user-name").value;
-  const inputKmValue = document.getElementById("input-km").value;
-  const inputAge = document.getElementById("age-range").value;
-  const ticketOutput = document.getElementById("ticket");
+  let userNameValue = document.getElementById("user-name").value;
+  let inputKmValue = document.getElementById("input-km").value;
+  let inputAge = document.getElementById("age-range").value;
 
   // Definisco la costante di prezzo al km
   const ticketPriceKm = 0.21;
@@ -30,13 +31,17 @@ generateButton.addEventListener("click", function () {
   // Dichiaro la variabile dello sconto applicabile
   let discount = {};
 
+  let offerType = "Offerta Standard";
+
   /* Istruzione condizionale
     Se l'età inserita dall'utente è inferiore ai 18 anni lo sconto è di 20, se
     superiore ai 65 anni è di 40. Negli altri casi lo sconto è nullo */
   if (inputAge === "under") {
+    offerType = "Offerta Under 18";
     discount = 20;
     console.log("Lo sconto applicato è del", discount, "%");
   } else if (inputAge === "over-65") {
+    offerType = "Offerta Over 65";
     discount = 40;
     console.log("Lo sconto applicato è del", discount, "%");
   } else if (inputAge === "legal-age") {
@@ -53,10 +58,21 @@ generateButton.addEventListener("click", function () {
   const randomCpCode = Math.floor(Math.random() * 99999 + 1);
 
   nameSurnameId.innerHTML = userNameValue;
-  offerId.innerHTML = inputAge;
+  offerId.innerHTML = offerType;
   trainCarId.innerHTML = randomTrainCart;
   cpCodeId.innerHTML = randomCpCode;
   ticketPriceId.innerHTML = finalPriceFixed;
 
   ticketOutput.classList.remove("hidden");
+});
+
+resetButton.addEventListener("click", function () {
+  ticketOutput.classList.add("hidden");
+  let userNameValue = document.getElementById("user-name");
+  let inputKmValue = document.getElementById("input-km");
+  let inputAge = document.getElementById("age-range");
+
+  userNameValue.value = "";
+  inputKmValue.value = "";
+  inputAge.value = "default";
 });
