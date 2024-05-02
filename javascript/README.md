@@ -20,7 +20,16 @@ Buon lavoro!
 
 creo 2 input:
 
-- input 1 per la lunghezza del viaggio
-- input 2 per l'età
+- input 1 per il nome e cognome del passeggero --> text field
+- input 2 per la lunghezza del viaggio --> number field
+- input 3 per l'età --> select con option
 
-creo 1 bottone
+definisco variabile per costo fisso al km
+
+creo 1 bottone per raccogliere i dati di input e all'evento click:
+
+- calcolo il costo del biglietto (km \* costo fisso)
+- definisco una variabile per lo sconto e la lascio vuota
+- istruzione condizionale dove vedo se il valore della option scelta è identico al suo valore dichiarato nell'HTML e definisco così il valore di discount
+- calcolo il prezzo finale (costo biglietto - [(costo biglietto/100)] \* discount)
+- modifico il costo finale in numero con solo 2 decimali

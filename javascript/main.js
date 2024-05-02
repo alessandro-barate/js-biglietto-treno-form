@@ -2,11 +2,16 @@
 
 // Prendo dall'HTML l' ID del bottone che genera i biglietti
 const generateButton = document.getElementById("generate-button");
-const nameSurname = document.getElementById("name");
-const offer = document.getElementById("offer");
-const trainCar = document.getElementById("train-car");
-const cpCode = document.getElementById("cp-cpde");
-const ticketPrice = document.getElementById("ticket-price");
+const nameSurnameId = document.getElementById("name");
+let nameSurname = nameSurnameId.innerHTML;
+const offerId = document.getElementById("offer");
+let offer = offerId.innerHTML;
+const trainCarId = document.getElementById("train-car");
+let trainCar = trainCarId.innerHTML;
+const cpCodeId = document.getElementById("cp-code");
+let cpCode = cpCodeId.innerHTML;
+const ticketPriceId = document.getElementById("ticket-price");
+let ticketPrice = ticketPriceId.innerHTML;
 
 // Aggiungo l'evento click al bottone che genera i biglietti
 generateButton.addEventListener("click", function () {
@@ -29,13 +34,20 @@ generateButton.addEventListener("click", function () {
     superiore ai 65 anni è di 40. Negli altri casi lo sconto è nullo */
   if (inputAge === "under") {
     discount = 20;
+    console.log("Lo sconto applicato è del", discount, "%");
   } else if (inputAge === "over-65") {
     discount = 40;
-  } else {
+    console.log("Lo sconto applicato è del", discount, "%");
+  } else if (inputAge === "legal-age") {
     discount = 0;
+  } else {
+    alert("Seleziona un range di età valido");
   }
 
   let finalPrice = totalPriceTicket - (totalPriceTicket / 100) * discount;
   let finalPriceFixed = finalPrice.toFixed(2);
   console.log("Il prezzo finale è di:", finalPrice.toFixed(2), "euro");
+
+  nameSurnameId.innerHTML = userNameValue;
+  ticketPriceId.innerHTML = finalPriceFixed;
 });
