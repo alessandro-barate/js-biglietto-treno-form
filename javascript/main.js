@@ -3,16 +3,6 @@
 // Prendo dall'HTML l' ID del bottone che genera i biglietti
 const generateButton = document.getElementById("generate-button");
 const resetButton = document.getElementById("reset-button");
-const nameSurnameId = document.getElementById("name");
-let nameSurname = nameSurnameId.innerHTML;
-const offerId = document.getElementById("offer");
-let offer = offerId.innerHTML;
-const trainCarId = document.getElementById("train-car");
-let trainCar = trainCarId.innerHTML;
-const cpCodeId = document.getElementById("cp-code");
-let cpCode = cpCodeId.innerHTML;
-const ticketPriceId = document.getElementById("ticket-price");
-let ticketPrice = ticketPriceId.innerHTML;
 const ticketOutput = document.getElementById("ticket");
 
 // Aggiungo l'evento click al bottone che genera i biglietti
@@ -29,7 +19,7 @@ generateButton.addEventListener("click", function () {
   console.log("Prezzo totale:", totalPriceTicket, "euro");
 
   // Dichiaro la variabile dello sconto applicabile
-  let discount = {};
+  let discount;
 
   let offerType = "Offerta Standard";
 
@@ -57,11 +47,11 @@ generateButton.addEventListener("click", function () {
   const randomTrainCart = Math.floor(Math.random() * 30 + 1);
   const randomCpCode = Math.floor(Math.random() * 99999 + 1);
 
-  nameSurnameId.innerHTML = userNameValue;
-  offerId.innerHTML = offerType;
-  trainCarId.innerHTML = randomTrainCart;
-  cpCodeId.innerHTML = randomCpCode;
-  ticketPriceId.innerHTML = finalPriceFixed;
+  document.getElementById("name").innerHTML = userNameValue;
+  document.getElementById("offer").innerHTML = offerType;
+  document.getElementById("train-car").innerHTML = randomTrainCart;
+  document.getElementById("cp-code").innerHTML = randomCpCode;
+  document.getElementById("ticket-price").innerHTML = finalPriceFixed;
 
   ticketOutput.classList.remove("hidden");
 });
